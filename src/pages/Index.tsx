@@ -284,7 +284,7 @@ const Index = () => {
               { 
                 icon: Shield, 
                 title: "Zero Risk to You", 
-                desc: "No upfront fees ever. We only charge upon successful recovery. Free consultation to assess your claim." 
+                desc: "No upfront fees. Free consultation to assess your claim." 
               },
             ].map((t) => (
               <div key={t.title} className="rounded-xl bg-primary-foreground/10 p-6 text-center backdrop-blur">
