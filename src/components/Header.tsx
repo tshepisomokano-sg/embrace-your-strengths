@@ -19,7 +19,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-primary shadow-lg">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <Link to="/" className="flex items-center gap-3">
-          <img src="/logo.png" alt="SG Benefits Consulting" className="h-12 w-auto" />
+          <img src="/logo.png" alt="SG Benefits Consulting" className="h-20 w-auto" />
         </Link>
 
         {/* Desktop nav */}
