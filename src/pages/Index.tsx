@@ -19,7 +19,7 @@ const claimTypes = [
   {
     icon: Heart,
     title: "Insurance Claims",
-    desc: "Life insurance, funeral cover, and group scheme benefit recovery.",
+    desc: "Life insurance, funeral cover & group scheme benefit recovery.",
   },
   {
     icon: Scale,
@@ -29,32 +29,137 @@ const claimTypes = [
 ];
 
 const steps = [
-  { icon: Phone, title: "Contact Us", desc: "Reach out via phone, WhatsApp, or our online form." },
-  { icon: Search, title: "We Investigate", desc: "We trace and verify your unclaimed benefits at no upfront cost." },
-  { icon: Banknote, title: "You Get Paid", desc: "Once approved, your benefits are paid directly to you." },
+  { icon: Phone, title: "Contact Us", desc: "Reach out via phone, WhatsApp or online form." },
+  { icon: Search, title: "We Investigate", desc: "We trace and verify your unclaimed benefits." },
+  { icon: Banknote, title: "You Get Paid", desc: "Once approved, benefits are paid directly to you." },
 ];
 
 const featuredTestimonials = [
   {
+    name: "Dr Mathews Phosa",
+    location: "Nelspruit, Mpumalanga",
+    result: "Special pension reinstated",
+    text: "Former ANC Treasurer General and Mpumalanga Premier. Due to extensive work commitments, Dr Phosa's monthly special pension was suspended. We successfully facilitated the reinstatement of his monthly special pension payments through National Treasury.",
+    highlight: "High-profile special pension case resolved"
+  },
+  {
     name: "Mrs Baloyi",
     location: "Pretoria, Gauteng",
-    result: "Pension fund unclaimed since 1992",
-    text: "Her late husband's pension fund remained unclaimed since 1992. She employed our services and arrear pension fund and surplus from 1992 to 2014 were paid. She is currently in receipt of monthly pension from Mipfa.",
-    highlight: "22 years of arrears recovered"
+    result: "22 years of unclaimed benefits",
+    text: "Following the passing of her husband in 1992, Mrs Baloyi was unaware of unclaimed pension benefits. We successfully recovered arrear pension funds and surplus spanning 1992 to 2014. She now receives a regular monthly pension from Mipfa.",
+    highlight: "22 years of arrears successfully recovered"
   },
   {
     name: "Mr Thoke",
     location: "Pretoria, Gauteng",
-    result: "18 years of benefits recovered",
-    text: "He was a correctional officer terminated due to ill health. The Compensation Fund disapproved his medical unfit benefit in 1997. He struggled for more than ten years until we came to his rescue. An appeal was filed, claim was re-assessed and he was paid all his monthly arrears from 1997 to 2015.",
-    highlight: "Successful appeal after 10+ years"
+    result: "18 years of denied benefits recovered",
+    text: "A correctional officer medically retired due to ill health. After the Compensation Fund initially denied his claim in 1997, Mr Thoke struggled for over a decade. We filed a successful appeal, resulting in full payment of monthly arrears from 1997 to 2015.",
+    highlight: "Successful appeal after 10+ years of denial"
   },
   {
     name: "Ms Bikela",
     location: "Claremont, KwaZulu Natal",
-    result: "12+ years unclaimed",
-    text: "Her late husband's benefits remained unclaimed for more than 12 years until she employed our services. She received all of her arrears monthly spouse pension, lump sum with interest. She is currently in receipt of monthly pension.",
-    highlight: "Now receiving monthly pension"
+    result: "12+ years of unclaimed benefits",
+    text: "Ms Bikela's late husband's pension benefits remained unclaimed for over 12 years. We recovered all arrear spouse pension payments, including a lump sum with interest. She now receives ongoing monthly pension payments.",
+    highlight: "Full arrears plus ongoing monthly pension secured"
+  },
+  {
+    name: "Ms Masina",
+    location: "Winterveldt, Gauteng",
+    result: "Life partner and children's benefits secured",
+    text: "As the life partner of the late Mr Makhubela (GEPF member), Ms Masina and children from previous relationships were entitled to benefits. We successfully facilitated the distribution of pension fund lump sum and arrear monthly pension to all qualifying beneficiaries.",
+    highlight: "Complex family benefit distribution resolved"
+  },
+  {
+    name: "Ms Maluleke",
+    location: "Vukani, Limpopo",
+    result: "Death-in-service benefits for multiple children",
+    text: "Following the death of their father while employed as a transport company driver in Venda, the family engaged our services. We successfully recovered and distributed pension fund proceeds from Old Mutual to all qualifying children.",
+    highlight: "Multiple beneficiaries successfully processed"
+  },
+  {
+    name: "Ms Setlhogola",
+    location: "Mathibestad, North West",
+    result: "Family dispute resolved, benefits secured",
+    text: "As life partner to a late South African National Defence Force member, Ms Setlhogola faced family disputes regarding benefit entitlement. We mediated the dispute and secured her monthly pension with full arrears from GEPF.",
+    highlight: "Dispute resolution and benefit recovery"
+  },
+  {
+    name: "Mr Vukela",
+    location: "Stinkwater, Gauteng",
+    result: "Comprehensive multi-fund recovery",
+    text: "Following death in service with Gauteng Provincial Government, we successfully recovered multiple benefits: GEPF pension fund, funeral benefits, orphans pension, Old Mutual retirement annuity, Metropolitan Life flexi endowment policy, Momentum insurance death claim, and employment leave credits.",
+    highlight: "Seven separate benefit claims successfully processed"
+  },
+  {
+    name: "Ms Mahunga",
+    location: "Letlhabile, North West",
+    result: "Multiple contract periods consolidated",
+    text: "A former teacher who worked across multiple schools on contract basis. Despite geographical distance and administrative challenges, we successfully consolidated all contract periods and recovered full pension benefits from GEPF.",
+    highlight: "Complex employment history successfully traced"
+  },
+  {
+    name: "Mr Sepataka",
+    location: "Maubane, North West",
+    result: "Provident fund recovery",
+    text: "Following resignation from his position as a petrol attendant at Shell Garage, we expeditiously recovered his provident fund benefits from Mifa.",
+    highlight: "Efficient standard claim processing"
+  },
+  {
+    name: "Ms Masitla",
+    location: "Atteridgeville, Gauteng",
+    result: "Employer dispute resolved, death benefits paid",
+    text: "When her husband died in service at a motor company, the employer initially refused death benefits, claiming abscondment. We successfully negotiated with the employer and secured correct death benefits from Mifa and Liberty Life for the widow and children.",
+    highlight: "Employer dispute overcome, full benefits secured"
+  },
+  {
+    name: "Mr Mashapu",
+    location: "Mamelodi, Gauteng",
+    result: "Benefits re-apportionment for excluded child",
+    text: "When his former son-in-law (SAPS member) passed, the child born out of wedlock was initially excluded from benefit distribution. We successfully reopened the case with GEPF, secured benefit redistribution, and facilitated guardian fund payments until the child reached majority.",
+    highlight: "Justice for excluded child beneficiary"
+  },
+  {
+    name: "Ms Selomi",
+    location: "Suurman/Hammanskraal, Gauteng",
+    result: "Multiple benefits despite family disputes",
+    text: "Following her husband's death in service at SAPS College, family disputes complicated the claim. We resolved disputes and secured GEPF pension and funeral benefits, plus Old Mutual retirement annuity payments.",
+    highlight: "Family mediation and multi-fund recovery"
+  },
+  {
+    name: "Mr Ramara",
+    location: "Soshanguve, Gauteng",
+    result: "Injury compensation and wrongful dismissal benefits",
+    text: "A machine operator who suffered finger amputation and subsequent dismissal. We successfully negotiated amputation compensation from the Compensation Fund and ex-gratia payments from Mipfa for wrongful termination.",
+    highlight: "Dual claims: injury and wrongful dismissal"
+  },
+  {
+    name: "Mr Mabasa",
+    location: "Witbank, Mpumalanga",
+    result: "Early retirement benefits from SAPS",
+    text: "A SAPS inspector who took early retirement. Due to time constraints and complex administrative requirements, we expedited the processing and payment of all early retirement benefits from GEPF.",
+    highlight: "Complex early retirement case resolved"
+  },
+  {
+    name: "Mr Phalatse",
+    location: "Tembisa, Gauteng",
+    result: "Non-cooperative employer overcome",
+    text: "Following resignation from Shell Garage, the employer refused to facilitate benefit payment. Through persistent negotiation with the employer and WSM Employee Benefits Administrators, we successfully secured his provident fund benefits.",
+    highlight: "Employer cooperation secured through negotiation"
+  },
+  {
+    name: "Mr Motlhoki",
+    location: "Johannesburg, Gauteng",
+    result: "Survivor and guardian fund benefits",
+    text: "Following his wife's death while serving in SANDF, we secured survivor spouse pension and facilitated guardian fund payments for their minor daughter. Annual payments continued until she reached 18 years, with remaining balance paid directly to her.",
+    highlight: "Long-term guardian fund administration"
+  },
+  {
+    name: "Ms Phetlha",
+    location: "Temba/Hammanskraal, Gauteng",
+    result: "Death and funeral benefits from multiple sources",
+    text: "Her late husband worked for Psira. Despite work commitments limiting her availability, we successfully recovered death benefits and funeral benefits from both Sanlam and GEPF.",
+    highlight: "Multi-insurer death benefit recovery"
   }
 ];
 
@@ -80,7 +185,7 @@ const Index = () => {
             Your Money Is Waiting.<br />Let Us Help You Claim It.
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-foreground/90 leading-relaxed">
-            Hundreds of thousands of people left government and private sector employment due to death, resignations, dismissals, retrenchments, retirement and ill health. Many now suffer financial stress and poverty, unaware that <strong>over R90 billion</strong> in their savings and investments remains unclaimed.
+            A significant volume of individuals have left government and private sector employment due to death, resignation, dismissal, retrenchment, retirement, or ill health. Many now face financial hardship, often unaware that <b>more than R90 billion</b> in accumulated savings and investments remains unclaimed.
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link to="/contact">
@@ -119,12 +224,12 @@ const Index = () => {
         <div className="container mx-auto max-w-5xl">
           <div className="mb-4 text-center">
             <span className="inline-block rounded-full bg-secondary/10 px-4 py-1 text-sm font-medium text-secondary">
-              Simple Process
+              Process
             </span>
           </div>
           <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">How It Works</h2>
           <p className="mx-auto mb-12 max-w-2xl text-center text-muted-foreground">
-            No complicated paperwork. We handle everything for you.
+            Simple. Seamless. Secure.
           </p>
           <div className="grid gap-8 md:grid-cols-3">
             {steps.map((step, i) => (
