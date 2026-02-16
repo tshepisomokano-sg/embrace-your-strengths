@@ -312,7 +312,7 @@ const Index = () => {
             </Button>
           </Link>
           <p className="mt-6 text-sm text-muted-foreground">
-            ✓ Response within 24 hours  ✓ Free benefits calculation  ✓ No obligation
+            ✓ Response within 24 hours  ✓ Free benefits calculation
           </p>
         </div>
       </section>
