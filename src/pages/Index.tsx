@@ -1,154 +1,166 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Shield, Users, TrendingUp, Phone, Search, Banknote, Scale, Heart, Briefcase, HelpCircle } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { Phone, Search, Banknote, Shield, Heart, Scale, Briefcase, Award, Users } from "lucide-react";
+import Layout from "@/components/Layout";
 
-const stats = [
-  { value: "R90B+", label: "Unclaimed in South Africa", icon: TrendingUp },
-  { value: "22+", label: "Years of Experience", icon: Shield },
-  { value: "1000+", label: "Clients Assisted", icon: Users },
-];
-
-const services = [
-  { icon: Banknote, title: "Pension & Provident Funds", desc: "Recovery from GEPF and private sector funds for former employees." },
-  { icon: Scale, title: "Guardian Fund", desc: "Claims from the Master of High Court for minors and beneficiaries." },
-  { icon: Heart, title: "Insurance Claims", desc: "Long-term insurance and related benefit recoveries." },
-  { icon: Briefcase, title: "Injury on Duty (IOD)", desc: "Workplace injury compensation claims processing." },
-  { icon: HelpCircle, title: "Other Claims", desc: "Medical aid savings and other unclaimed benefits." },
+const claimTypes = [
+  {
+    icon: Briefcase,
+    title: "Pension & Provident Funds",
+    desc: "Recover unclaimed benefits from GEPF and private pension/provident funds.",
+  },
+  {
+    icon: Shield,
+    title: "Guardian Fund",
+    desc: "Claims through the Master of the High Court for minor beneficiaries.",
+  },
+  {
+    icon: Heart,
+    title: "Insurance Claims",
+    desc: "Life insurance, funeral cover, and group scheme benefit recovery.",
+  },
+  {
+    icon: Scale,
+    title: "Injury on Duty",
+    desc: "Compensation for workplace injuries and occupational diseases.",
+  },
 ];
 
 const steps = [
-  { step: "01", title: "Contact Us", desc: "Reach out via our form or phone with your details." },
-  { step: "02", title: "We Investigate", desc: "We trace and verify your unclaimed benefits at no upfront cost." },
-  { step: "03", title: "You Get Paid", desc: "Once approved, your funds are released directly to you." },
+  { icon: Phone, title: "Contact Us", desc: "Reach out via phone, WhatsApp, or our online form." },
+  { icon: Search, title: "We Investigate", desc: "We trace and verify your unclaimed benefits at no upfront cost." },
+  { icon: Banknote, title: "You Get Paid", desc: "Once approved, your benefits are paid directly to you." },
 ];
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-
+    <Layout>
       {/* Hero */}
-      <section className="relative bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-secondary rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-20 w-96 h-96 bg-secondary rounded-full blur-3xl" />
-        </div>
-        <div className="container mx-auto px-4 py-20 md:py-28 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-              There's Over <span className="text-secondary">R90 Billion</span> in Unclaimed Money.
-              <br />Some of It Could Be Yours.
-            </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 font-sans mb-8 max-w-2xl leading-relaxed">
-              SG Benefits Consulting helps you recover unclaimed pension funds, provident funds, insurance payouts, and more — at no upfront cost.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-sans text-base">
-                <Link to="/contact">
-                  Start Your Claim <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+      <section className="relative overflow-hidden bg-primary px-4 py-20 text-primary-foreground md:py-32">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(140_28%_58%/0.15),transparent_70%)]" />
+        <div className="container relative mx-auto max-w-4xl text-center">
+          <p className="mb-4 inline-block rounded-full bg-secondary/20 px-4 py-1 text-sm font-medium text-secondary">
+            Over R90 Billion in Unclaimed Benefits
+          </p>
+          <h1 className="mb-6 text-4xl leading-tight md:text-6xl">
+            Your Money Is Waiting.<br />Let Us Help You Claim It.
+          </h1>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-foreground/80">
+            SG Benefits Consulting specialises in recovering unclaimed pension, provident fund, insurance, and guardian fund benefits for South Africans.
+          </p>
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Link to="/contact">
+              <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-base px-8">
+                Start Your Claim
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-sans text-base">
-                <Link to="/services">
-                  Our Services
-                </Link>
+            </Link>
+            <Link to="/services">
+              <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base">
+                Our Services
               </Button>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="bg-secondary py-10">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {stats.map((stat) => (
-              <div key={stat.label} className="flex items-center gap-4 justify-center">
-                <stat.icon className="h-10 w-10 text-secondary-foreground/80" />
-                <div>
-                  <p className="text-3xl font-bold text-secondary-foreground">{stat.value}</p>
-                  <p className="text-sm text-secondary-foreground/80 font-sans">{stat.label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Overview */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What We Help You Claim</h2>
-            <p className="text-muted-foreground font-sans max-w-2xl mx-auto">
-              We specialise in tracing and recovering unclaimed benefits across multiple categories.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((svc) => (
-              <Card key={svc.title} className="group hover:shadow-lg transition-shadow border-border hover:border-secondary">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
-                    <svc.icon className="h-6 w-6 text-secondary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">{svc.title}</h3>
-                  <p className="text-muted-foreground font-sans text-sm">{svc.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Button asChild variant="outline" className="font-sans">
-              <Link to="/services">View All Services <ArrowRight className="ml-2 h-4 w-4" /></Link>
-            </Button>
-          </div>
+      <section className="border-b bg-muted px-4 py-12">
+        <div className="container mx-auto grid max-w-4xl gap-8 text-center md:grid-cols-3">
+          {[
+            { value: "22+", label: "Years Experience" },
+            { value: "R90B+", label: "Unclaimed in SA" },
+            { value: "4", label: "Claim Categories" },
+          ].map((s) => (
+            <div key={s.label}>
+              <p className="text-3xl font-bold text-primary md:text-4xl">{s.value}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="py-16 md:py-24 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">How It Works</h2>
-            <p className="text-muted-foreground font-sans">Three simple steps to recover your unclaimed money.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {steps.map((s) => (
-              <div key={s.step} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {s.step}
+      <section className="px-4 py-16 md:py-24">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="mb-12 text-center text-3xl md:text-4xl">How It Works</h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            {steps.map((step, i) => (
+              <div key={step.title} className="text-center">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary/20">
+                  <step.icon className="h-7 w-7 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">{s.title}</h3>
-                <p className="text-muted-foreground font-sans text-sm">{s.desc}</p>
+                <p className="mb-1 text-xs font-bold uppercase tracking-wider text-secondary">Step {i + 1}</p>
+                <h3 className="mb-2 text-xl">{step.title}</h3>
+                <p className="text-sm text-muted-foreground">{step.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trust / CTA */}
-      <section className="py-16 md:py-24 bg-primary">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Founded by a Pension Fund Expert
-          </h2>
-          <p className="text-primary-foreground/80 font-sans max-w-2xl mx-auto mb-8 leading-relaxed">
-            Steve Ngobenza brings over 22 years of experience in pension fund administration, GEPF, and financial advisory services. SG Benefits Consulting has been helping South Africans recover what's rightfully theirs since 2015.
+      {/* Claim Types */}
+      <section className="bg-muted px-4 py-16 md:py-24">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="mb-4 text-center text-3xl md:text-4xl">What We Recover</h2>
+          <p className="mx-auto mb-12 max-w-xl text-center text-muted-foreground">
+            We handle a wide range of unclaimed financial benefits across South Africa.
           </p>
-          <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-sans">
-            <Link to="/contact">
-              <Phone className="mr-2 h-5 w-5" />
-              Get in Touch Today
-            </Link>
-          </Button>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {claimTypes.map((ct) => (
+              <Card key={ct.title} className="border-none bg-card shadow-md transition-shadow hover:shadow-lg">
+                <CardContent className="flex gap-4 p-6">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                    <ct.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="mb-1 text-lg font-semibold">{ct.title}</h3>
+                    <p className="text-sm text-muted-foreground">{ct.desc}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
-      <Footer />
-    </div>
+      {/* Trust */}
+      <section className="px-4 py-16 md:py-24">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="mb-12 text-3xl md:text-4xl">Why Trust Us</h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            {[
+              { icon: Award, title: "Registered & Compliant", desc: "Registered company (2015/139818/07) operating within FSCA guidelines." },
+              { icon: Users, title: "Affiliated Partners", desc: "Proud member of Black Umbrellas and UNCTAD Empretec programme." },
+              { icon: Banknote, title: "No Upfront Fees", desc: "We only charge upon successful recovery — no risk to you." },
+            ].map((t) => (
+              <div key={t.title}>
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-secondary/20">
+                  <t.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="mb-2 text-lg font-semibold">{t.title}</h3>
+                <p className="text-sm text-muted-foreground">{t.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-primary px-4 py-16 text-primary-foreground md:py-20">
+        <div className="container mx-auto max-w-3xl text-center">
+          <h2 className="mb-4 text-3xl md:text-4xl">Ready to Claim What's Yours?</h2>
+          <p className="mb-8 text-primary-foreground/80">
+            It costs nothing to find out if you have unclaimed benefits. Get in touch today.
+          </p>
+          <Link to="/contact">
+            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 text-base">
+              Start Your Claim Now
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </Layout>
   );
 };
 
