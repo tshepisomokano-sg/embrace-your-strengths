@@ -20,7 +20,7 @@ const Contact = () => {
     try {
       await emailjs.send(
         'service_zgxf1no',
-        'my3xqt4',
+        'template_701xo2w',
         {
           name: form.name,
           phone: form.phone,
