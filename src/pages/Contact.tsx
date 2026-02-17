@@ -6,18 +6,45 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Inquiry Submitted",
-      description: "Thank you! We'll be in touch within 24 hours.",
-    });
-    setForm({ name: "", phone: "", email: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        'service_zgxf1no',
+        'my3xqt4',
+        {
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          message: form.message,
+        },
+        'edt2D2dR-x8jTPCM4'
+      );
+
+      toast({
+        title: "Inquiry Submitted ✓",
+        description: "Thank you! We'll be in touch within 24 hours.",
+      });
+      setForm({ name: "", phone: "", email: "", message: "" });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Submission Failed",
+        description: "Something went wrong. Please try WhatsApp or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -43,6 +70,7 @@ const Contact = () => {
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
                 placeholder="e.g. Thabo Mokoena"
+                disabled={isSubmitting}
               />
             </div>
             <div>
@@ -54,6 +82,7 @@ const Contact = () => {
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 required
                 placeholder="e.g. 072 123 4567"
+                disabled={isSubmitting}
               />
             </div>
             <div>
@@ -64,6 +93,7 @@ const Contact = () => {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 placeholder="e.g. thabo@email.com"
+                disabled={isSubmitting}
               />
             </div>
             <div>
@@ -75,10 +105,16 @@ const Contact = () => {
                 required
                 placeholder="e.g. I worked for a company from 2005-2012 and never claimed my pension..."
                 rows={5}
+                disabled={isSubmitting}
               />
             </div>
-            <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-              Submit Inquiry
+            <Button 
+              type="submit" 
+              size="lg" 
+              className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Sending..." : "Submit Inquiry"}
             </Button>
           </form>
 
