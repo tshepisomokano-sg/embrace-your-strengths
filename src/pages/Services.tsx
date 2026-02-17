@@ -254,9 +254,6 @@ const Services = () => {
       {/* Value Proposition */}
       <section className="bg-primary px-4 py-16 text-primary-foreground">
         <div className="container mx-auto max-w-4xl text-center">
-          <p className="mb-8 text-lg text-primary-foreground/90">
-            No upfront fees.
-          </p>
           <Link to="/contact">
             <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
               Start Your Claim Today

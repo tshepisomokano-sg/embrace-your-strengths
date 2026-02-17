@@ -190,7 +190,7 @@ const Index = () => {
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link to="/contact">
               <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-base px-8 shadow-lg">
-                Start Your Free Consultation
+                Start Your Consultation
               </Button>
             </Link>
             <Link to="/services">
@@ -387,10 +387,11 @@ const Index = () => {
                 desc: "Proud member of Black Umbrellas and UNCTAD Empretec programme. Recognized by major fund administrators." 
               },
               { 
-                icon: Shield, 
-                title: "Zero Risk to You", 
-                desc: "No upfront fees. Free consultation to assess your claim." 
-              },
+               icon: Shield, 
+               title: "Hassle-Free Process", 
+                desc: "We manage the entire process on your behalf, from verification to submission, keeping everything simple and stress-free." 
+              }
+,
             ].map((t) => (
               <div key={t.title} className="rounded-xl bg-primary-foreground/10 p-6 text-center backdrop-blur">
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary/20">
@@ -408,16 +409,14 @@ const Index = () => {
       <section className="px-4 py-20">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">Ready to Claim What's Yours?</h2>
-          <p className="mb-8 text-lg text-muted-foreground">
-            Free consultation. No upfront fees. We handle everything.
-          </p>
+          <br></br>
           <Link to="/contact">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-10 py-6 text-lg shadow-xl">
               Start Your Claim Now
             </Button>
           </Link>
           <p className="mt-6 text-sm text-muted-foreground">
-            ✓ Response within 24 hours  ✓ Free benefits calculation
+            ✓ Response within 24 hours  
           </p>
         </div>
       </section>
