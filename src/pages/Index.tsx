@@ -185,8 +185,14 @@ const Index = () => {
             Your Money Is Waiting.<br />Let Us Help You Claim It.
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-foreground/90 leading-relaxed">
-            A significant volume of individuals have left government and private sector employment due to death, resignation, dismissal, retrenchment, retirement, or ill health. Many now face financial hardship, often unaware that <b>more than R90 billion</b> in accumulated savings and investments remains unclaimed.
-          </p>
+  Were you born in the 80s, 90s or 2000s and lost a parent or guardian who was working at the time?  
+  Or did you personally leave a job years ago — through resignation, retrenchment, dismissal, retirement or ill health?
+
+  There could be pension or provident fund money waiting for you.
+
+  More than <b>R90 billion</b> in retirement savings remains unclaimed in South Africa — simply because people don’t know it’s there.
+</p>
+
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link to="/contact">
               <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-base px-8 shadow-lg">
