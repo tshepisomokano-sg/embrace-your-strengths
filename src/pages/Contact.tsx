@@ -129,7 +129,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Call us</p>
-                    <a href="tel:+27123456789" className="font-medium hover:text-primary">+27 12 345 6789</a>
+                    <a href="tel:+27670220291" className="font-medium hover:text-primary">+27 67 022 0291</a>
                   </div>
                 </li>
                 <li className="flex items-center gap-4">
@@ -158,7 +158,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Address</p>
-                    <p className="font-medium">Pretoria, Gauteng, South Africa</p>
+                    <p className="font-medium">1237 Pretorius Street, Pretoria, Gauteng, South Africa</p>
                   </div>
                 </li>
               </ul>
