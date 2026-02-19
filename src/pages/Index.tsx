@@ -242,7 +242,7 @@ const Index = () => {
             <br /><br />
             There could be pension or provident fund money waiting for you.
             <br /><br />
-            More than <b>R90 billion</b> in retirement savings remains unclaimed in South Africa — simply because people don't know it's there.
+            More than <b>R90 billion</b> in retirement, investments and savings remains unclaimed in South Africa — simply because people don't know it's there.
           </p>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
