@@ -237,7 +237,7 @@ const Index = () => {
             Your Money Is Waiting.<br />Let Us Help You Claim It.
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-foreground/90 leading-relaxed">
-            Were you born in the 80s, 90s or 2000s and lost one or both of your parents or guardians who was working at the time?  
+            Were you born in the 80s, 90s or 2000s and lost one or both of your parents or guardians who were working at the time?  
             Or did you personally leave a job years ago — through resignation, retrenchment, dismissal, retirement or ill health?
             <br /><br />
             There could be pension or provident fund money waiting for you.
