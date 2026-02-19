@@ -307,7 +307,7 @@ const Index = () => {
           {[
             { value: "22+", label: "Years Experience", sublabel: "in pension fund administration" },
             { value: "R90B+", label: "Unclaimed Benefits", sublabel: "across South Africa" },
-            { value: "100%", label: "Success-Based", sublabel: "no upfront costs" },
+            { value: "100%", label: "Success-Based", sublabel: "we don't stop until you're paid" },
           ].map((s) => (
             <div key={s.label} className="rounded-lg bg-card p-6 shadow-sm">
               <p className="text-4xl font-bold text-primary md:text-5xl">{s.value}</p>
